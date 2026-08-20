@@ -1,0 +1,41 @@
+[bar]
+order = [ "main" ]
+
+    [bar.main]
+    enabled = true
+    position = "left"
+
+    start = [ "workspaces" ]
+    center = []
+    end = [ "volume", "network", "bluetooth", "clock", "tray", "battery" ]
+
+    background_opacity = 0.9
+    radius = 4
+    capsule_radius = 4
+    concave_edge_corners = false
+
+    margin_edge = 2
+    margin_ends = 5
+
+[widget.battery]
+show_label = false
+
+[widget.bluetooth]
+capsule = true
+
+[widget.network]
+capsule = true
+show_label = false
+
+[widget.tray]
+capsule = true
+
+[widget.volume]
+capsule = true
+show_label = false
+
+[widget.workspaces]
+active_pill_size = 1.0
+capsule = true
+label_source = "name"
+occupied_color = "surface_variant"
