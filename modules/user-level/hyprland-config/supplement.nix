@@ -1,4 +1,4 @@
-# Packages to supplement and contribute functionality to Hyprland
+# Package & services to supplement and contribute functionality to Hyprland
 { pkgs, ... }:
 
 {
@@ -15,4 +15,6 @@
 
     hyprshutdown # graceful shutdown utility
   ];
+
+  services.hypridle.enable = false;
 }
