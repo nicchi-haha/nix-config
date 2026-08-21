@@ -6,7 +6,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Stable channel
-    # nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
 
     # Home Manager
     home-manager = {
@@ -34,7 +34,10 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.extraSpecialArgs = inputs // specialArgs;
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+              inherit specialArgs;
+            };
             home-manager.users.${username} = import ./users/${username}/home.nix;
           }
         ];
