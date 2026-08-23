@@ -13,13 +13,29 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Caelestia Shell
+    # caelestia-shell = {
+    #   url = "github:caelestia-dots/shell";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = { self, nixpkgs, home-manager,  ... }@inputs: {
     nixosConfigurations = {
       snowflake = let
         username = "yuki";
-        specialArgs = {inherit username;};
+        system = "x86_64-linux";
+
+        pkgs-stable = import inputs.nixpkgs-stable {
+          inherit system;
+        };
+
+        specialArgs = {
+          inherit username;
+          inherit system;
+          inherit pkgs-stable;
+        };
       in
       nixpkgs.lib.nixosSystem {
         inherit specialArgs;
@@ -36,7 +52,8 @@
 
             home-manager.extraSpecialArgs = {
               inherit inputs;
-              inherit specialArgs;
+              inherit system;
+              inherit pkgs-stable;
             };
             home-manager.users.${username} = import ./users/${username}/home.nix;
           }

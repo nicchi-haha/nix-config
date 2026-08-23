@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, pkgs-stable, ... }:
 
 {
  # Enable ZSH & configure
@@ -12,7 +12,7 @@
     plugins = [
       {
         name = "zsh-autocomplete";
-        src = inputs.nixpkgs-stable.legacyPackages.x86_64-linux.zsh-autocomplete;
+        src = pkgs-stable.zsh-autocomplete;
         file = "share/zsh-autocomplete/zsh-autocomplete.plugin.zsh";
       }
     ];

@@ -2,7 +2,8 @@
 
 {
   imports = [
-    ./desktop-shell.nix
     ./supplement.nix
+
+    ./desktop-shell
   ];
 }

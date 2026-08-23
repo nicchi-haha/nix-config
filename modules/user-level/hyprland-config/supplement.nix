@@ -12,9 +12,11 @@
 
     brightnessctl # adjust brightness
     pamixer # adjust volume
+    wl-clipboard # Clipboard utility, require cliphist
 
     hyprshutdown # graceful shutdown utility
   ];
 
   services.hypridle.enable = false;
+  services.cliphist.enable = true;
 }
