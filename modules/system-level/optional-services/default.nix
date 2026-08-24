@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./polkit.nix
     ./display-manager.nix
     ./flatpak.nix
     ./laptop-services.nix

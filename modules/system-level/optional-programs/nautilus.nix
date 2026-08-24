@@ -1,4 +1,4 @@
-# Enables the GNOME file manager and install nautilus-open-any-terminal configured for kitty
+# Enables the GNOME file manager and install some supplements
 
 { pkgs, ... }:
 
@@ -11,4 +11,6 @@
     enable = true;
     terminal = "kitty";
   };
+
+  services.gvfs.enable = true;
 }

@@ -3,6 +3,7 @@
 {
   imports = [
     ./browsers.nix
+    ./polkit-agent.nix
     ./mpd.nix
     ./multimedia.nix
     ./terminal.nix
