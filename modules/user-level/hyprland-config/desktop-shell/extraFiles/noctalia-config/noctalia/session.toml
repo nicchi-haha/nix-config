@@ -6,7 +6,6 @@
 
   [[shell.session.actions]]
   action = "shutdown"
-  command = "hyprshutdown --post-cmd \"systemctl poweroff\""
   countdown_seconds = 0.0
   enabled = true
   shortcut = "1"
@@ -14,7 +13,6 @@
 
   [[shell.session.actions]]
   action = "reboot"
-  command = "hyprshutdown --post-cmd \"systemctl reboot\""
   countdown_seconds = 0.0
   enabled = true
   shortcut = "2"

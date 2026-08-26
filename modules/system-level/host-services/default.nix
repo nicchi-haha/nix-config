@@ -1,0 +1,5 @@
+{
+  imports = [
+    ./laptop-services.nix
+  ];
+}

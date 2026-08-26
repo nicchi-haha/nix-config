@@ -2,6 +2,6 @@
   imports = [
     ./nautilus.nix
     ./kdeconnect.nix
-    ./noctalia.nix
+    ./steam.nix
   ];
 }
