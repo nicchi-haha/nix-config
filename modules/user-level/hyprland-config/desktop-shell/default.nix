@@ -1,5 +1,5 @@
 {
   imports = [
-    ./noctalia-shell.nix
+    ./noctalia-shell
   ];
 }

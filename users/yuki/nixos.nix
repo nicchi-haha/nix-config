@@ -3,7 +3,6 @@
 {
   imports = [
     ../../modules/system-level/zsh.nix
-    ../../modules/system-level/pro-audio
     ../../modules/system-level/desktops/hyprland
     ../../modules/system-level/optional-services
     ../../modules/system-level/optional-programs
@@ -14,4 +13,8 @@
     extraGroups = [ "audio" ];
     shell = pkgs.zsh;
   };
+
+  # Other stuff
+  pro-audio.enable = true;
+  gaming.enable = true;
 }

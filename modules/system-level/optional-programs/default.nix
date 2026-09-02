@@ -2,6 +2,8 @@
   imports = [
     ./nautilus.nix
     ./kdeconnect.nix
-    ./steam.nix
+    ./blueman.nix
+    ./gaming
+    ./pro-audio
   ];
 }

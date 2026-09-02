@@ -11,4 +11,5 @@
   programs.yt-dlp.enable = true; # Multi-site downloader
 
   # services.easyeffects.enable = true; # EQ and other audio post-processing filters as a background service
+  services.blueman-applet.enable = false; # Blueman applet/tray app for desktops
 }

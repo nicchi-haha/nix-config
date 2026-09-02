@@ -1,3 +1,6 @@
+[brightness]
+minimum_brightness = 0.01
+
 [osd]
 orientation = "vertical"
 position = "center_right"
@@ -6,9 +9,6 @@ position_vertical = "center_right"
   [osd.kinds]
   keyboard_layout = false
   media = false
-
-[wallpaper]
-enabled = false
 
 [theme]
 source = "wallpaper"

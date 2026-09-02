@@ -4,7 +4,7 @@
 {
   imports = [
     ./fonts.nix
-    ./host-services
+    ./system-configs
   ];
 
   # Define a user account.

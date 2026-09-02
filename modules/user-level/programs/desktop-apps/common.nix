@@ -5,5 +5,7 @@
     nautilus
     file-roller
     htop
+    gnome-calculator
+    loupe
   ];
 }

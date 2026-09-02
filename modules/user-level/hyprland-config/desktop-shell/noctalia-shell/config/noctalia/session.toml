@@ -34,7 +34,6 @@
 
   [[shell.session.actions]]
   action = "logout"
-  command = "hyprshutdown"
   countdown_seconds = 0.0
   enabled = true
   shortcut = "5"
