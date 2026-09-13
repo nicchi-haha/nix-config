@@ -36,6 +36,12 @@
       fsType = "ext4";
     };
 
+  fileSystems."/mnt/main-drive" =
+    { device = "/dev/disk/by-uuid/a34b9843-0027-4317-90e7-1d3b0b94644b";
+      fsType = "btrfs";
+      options = [ "subvol=@data" ];
+    };
+
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

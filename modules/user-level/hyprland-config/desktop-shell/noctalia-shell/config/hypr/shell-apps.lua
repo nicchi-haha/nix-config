@@ -11,8 +11,8 @@ local shell = {
         },
 
         brightness = {
-                up = ipc .. "brightness-up",
-                down = ipc .. "brightness-down"
+                up = "brightnessctl -n2 -e4 set +5%",
+                down = "brightnessctl -n2 -e4 set 5%-"
         },
 
         clipboard = {

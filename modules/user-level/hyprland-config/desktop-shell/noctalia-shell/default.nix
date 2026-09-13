@@ -4,6 +4,7 @@
 {
   home.packages = with pkgs; [
     noctalia
+    brightnessctl
   ];
 
   home.file = {

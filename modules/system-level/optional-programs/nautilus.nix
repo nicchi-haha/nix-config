@@ -5,6 +5,9 @@
 {
   environment.systemPackages = with pkgs; [
     nautilus
+    ffmpegthumbnailer
+    ffmpeg-headless
+    gdk-pixbuf
   ];
 
   programs.nautilus-open-any-terminal = {

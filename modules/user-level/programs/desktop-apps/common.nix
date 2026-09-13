@@ -7,5 +7,6 @@
     htop
     gnome-calculator
     loupe
+    obsidian
   ];
 }
