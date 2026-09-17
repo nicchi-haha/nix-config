@@ -25,11 +25,8 @@
   hardware.bluetooth.enable = true;
 
   # Install NVIDIA Proprietary driver and enable PRIME offload
-  hardware.graphics.enable = true;
+  drivers.nvidia.enable = true;
   hardware.nvidia = {
-    open = true;
-    modesetting.enable = true;
-
     prime = {
       offload.enable = true;
       offload.enableOffloadCmd = true;
@@ -39,17 +36,8 @@
     };
   };
 
-  services.xserver.videoDrivers = [ "nvidia" "modesetting" ];
-
-  # Enable mcontrolcenter to manage fans
-  boot.extraModulePackages = [ config.boot.kernelPackages.msi-ec ];
-  boot.kernelModules = [ "msi-ec" "ec_sys" ];
-
-  environment.systemPackages = with pkgs; [
-    mcontrolcenter
-  ];
-
   # Enable other modules
+  drivers.msi-ec.enable = true;
   laptop-services.enable = true;
 
   system.stateVersion = "26.05"; # DO NOT CHANGE

@@ -6,7 +6,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Stable channel
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
+    #nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
 
     # Home Manager
     home-manager = {
@@ -21,14 +21,14 @@
         username = "yuki";
         system = "x86_64-linux";
 
-        pkgs-stable = import inputs.nixpkgs-stable {
-          inherit system;
-        };
+        #pkgs-stable = import inputs.nixpkgs-stable {
+        #  inherit system;
+        #};
 
         specialArgs = {
           inherit username;
           inherit system;
-          inherit pkgs-stable;
+         # inherit pkgs-stable;
         };
       in
       nixpkgs.lib.nixosSystem {
@@ -47,7 +47,7 @@
             home-manager.extraSpecialArgs = {
               inherit inputs;
               inherit system;
-              inherit pkgs-stable;
+          #    inherit pkgs-stable;
             };
             home-manager.users.${username} = import ./users/${username}/home.nix;
           }

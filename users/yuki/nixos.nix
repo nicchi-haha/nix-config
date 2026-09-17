@@ -4,9 +4,7 @@
   imports = [
     ../../modules/system-level/zsh.nix
     ../../modules/system-level/desktops/hyprland
-    ../../modules/system-level/optional-services
-    ../../modules/system-level/optional-programs
-    ../../modules/system-level/optional-dev
+    ../../modules/system-level/programs
   ];
 
   users.users.yuki = {
@@ -15,6 +13,7 @@
   };
 
   # Other stuff
+  dev.enable = true;
   pro-audio.enable = true;
   gaming.enable = true;
 }

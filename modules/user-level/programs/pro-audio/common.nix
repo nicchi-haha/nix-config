@@ -5,5 +5,6 @@
     qjackctl # JACK utility
     reaper # DAW
     tuxguitar # TAB editor
+    audacity # simpler daw
   ];
 }
