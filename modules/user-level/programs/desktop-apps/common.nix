@@ -9,5 +9,8 @@
     gnome-text-editor
     loupe
     obsidian
+    baobab
   ];
+
+  xdg.autostart.enable = true;
 }

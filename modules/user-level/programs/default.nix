@@ -5,7 +5,6 @@
     ./fcitx5.nix
 
     ./desktop-apps
-    ./pro-audio
     ./development
   ];
 }

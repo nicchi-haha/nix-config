@@ -9,8 +9,16 @@
     ./hardware-configuration.nix
   ];
 
-  # Use systemd-boot as bootloader
-  boot.loader.systemd-boot.enable = true;
+  # Use limine as bootloader
+  boot.loader.limine = {
+    enable = true;
+    secureBoot.enable = true;
+    extraEntries = ''
+      /Arch Linux
+        protocol: efi
+        path: uuid(fa7b47b9-93ed-42f7-be95-fcb348cab1a4):/EFI/Linux/arch-linux.efi
+      '';
+  };
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Enable ZRAM

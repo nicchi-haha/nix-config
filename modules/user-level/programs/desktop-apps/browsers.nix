@@ -1,3 +1,4 @@
 {
-  programs.floorp.enable = true;
+  #programs.floorp.enable = true;
+  programs.firefox.enable = true;
 }

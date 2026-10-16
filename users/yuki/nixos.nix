@@ -13,7 +13,11 @@
   };
 
   # Other stuff
-  dev.enable = true;
+  dev = {
+    enable = true;
+    virt-manager.enable = true;
+  };
+
   pro-audio.enable = true;
   gaming.enable = true;
 }

@@ -2,6 +2,9 @@
 { lib, ... }:
 
 {
+  nixpkgs.config.allowUnfree = lib.mkDefault true; # Set to allow all unfree software
+
+  /*
   nixpkgs.config.allowUnfreePredicate =
     pkg:
     builtins.elem (lib.getName pkg) [
@@ -14,5 +17,6 @@
       "reaper"
       "obsidian"
     ];
+  */
 }
 

@@ -16,4 +16,13 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  home.file."${config.xdg.configHome}/nixpkgs/config.nix" = {
+    enable = true;
+    text = ''
+      {
+        allowUnfree = true;
+      }
+    '';
+  };
 }

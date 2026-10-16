@@ -25,21 +25,34 @@
       options = [ "subvol=@nixos-home" ];
     };
 
+  fileSystems."/mnt/main-drive" =
+    { device = "/dev/disk/by-uuid/a34b9843-0027-4317-90e7-1d3b0b94644b";
+      fsType = "btrfs";
+      options = [ "subvol=@data" "nofail" ];
+    };
+
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/3162-6095";
+    { device = "/dev/disk/by-uuid/F779-11BD";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   fileSystems."/mnt/external-drive" =
-    { device = "/dev/disk/by-uuid/274d21f6-7a89-4b2e-bac3-d40d5c78a714";
-      fsType = "ext4";
+    { device = "/dev/disk/by-uuid/f55b438c-7855-443c-aef4-896b0da2fef6";
+      fsType = "btrfs";
+      options = [ "subvol=@data" "nofail" ];
     };
 
-  fileSystems."/mnt/main-drive" =
-    { device = "/dev/disk/by-uuid/a34b9843-0027-4317-90e7-1d3b0b94644b";
-      fsType = "btrfs";
-      options = [ "subvol=@data" ];
+  fileSystems."/home/yuki/.local/share/flatpak" =
+    { device = "/mnt/main-drive/Yuki/Apps/Flatpak/flatpak";
+      fsType = "none";
+      options = [ "bind" "nofail" ];
+    };
+
+  fileSystems."/home/yuki/.var" =
+    { device = "/mnt/main-drive/Yuki/Apps/Flatpak/.var";
+      fsType = "none";
+      options = [ "bind" "nofail" ];
     };
 
   swapDevices = [ ];
