@@ -6,7 +6,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Stable channel
-    #nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
 
     # Home Manager
     home-manager = {
@@ -21,14 +21,15 @@
         username = "yuki";
         system = "x86_64-linux";
 
-        #pkgs-stable = import inputs.nixpkgs-stable {
-        #  inherit system;
-        #};
+        pkgs-stable = import inputs.nixpkgs-stable {
+          inherit system;
+          config.allowUnfree = true;
+        };
 
         specialArgs = {
           inherit username;
           inherit system;
-         # inherit pkgs-stable;
+          inherit pkgs-stable;
         };
       in
       nixpkgs.lib.nixosSystem {
@@ -38,18 +39,20 @@
           ./unfree-list.nix
           ./hosts/snowflake
           ./users/${username}/nixos.nix
+          ./overlays
 
-          home-manager.nixosModules.home-manager
+          home-manager.nixosModules.default
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
 
-            home-manager.extraSpecialArgs = {
-              inherit inputs;
-              inherit system;
-          #    inherit pkgs-stable;
+              extraSpecialArgs = {
+                inherit inputs;
+              };
+
+              users.${username} = ./users/${username}/home.nix;
             };
-            home-manager.users.${username} = import ./users/${username}/home.nix;
           }
         ];
       };

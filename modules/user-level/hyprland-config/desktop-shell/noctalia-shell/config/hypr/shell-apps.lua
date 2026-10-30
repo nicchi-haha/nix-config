@@ -19,11 +19,6 @@ local shell = {
                 toggle = ipc .. "panel-toggle clipboard",
                 clear = ipc .. "clipboard-clear"
         },
-
-        screenshot = {
-                full = ipc .. "screenshot-fullscreen",
-                region = ipc .. "screenshot-region"
-        }
 }
 
 return shell

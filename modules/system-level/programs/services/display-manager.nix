@@ -7,4 +7,5 @@
   };
 
   services.displayManager.gdm.enable = true; # GNOME Display Manager
+  services.displayManager.plasma-login-manager.enable = false;
 }

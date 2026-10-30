@@ -12,5 +12,7 @@
     baobab
   ];
 
+  programs.thunderbird.enable = true;
+
   xdg.autostart.enable = true;
 }

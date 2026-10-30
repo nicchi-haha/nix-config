@@ -9,5 +9,7 @@
     ./keepassxc.nix
 
     ./gaming
+    ./study
+    ./pro-audio
   ];
 }

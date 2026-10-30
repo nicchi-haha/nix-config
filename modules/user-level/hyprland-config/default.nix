@@ -4,4 +4,6 @@
   imports = [
     ./desktop-shell
   ];
+
+  programs.hyprshot.enable = true;
 }

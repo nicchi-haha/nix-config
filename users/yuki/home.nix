@@ -25,4 +25,6 @@
       }
     '';
   };
+
+  pro-audio.enable = true;
 }

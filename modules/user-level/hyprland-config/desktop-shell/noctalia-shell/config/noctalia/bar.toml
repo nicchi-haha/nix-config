@@ -29,6 +29,7 @@ show_label = false
 
 [widget.tray]
 capsule = true
+drawer = true
 
 [widget.volume]
 capsule = true
@@ -38,4 +39,4 @@ show_label = false
 active_pill_size = 1.0
 capsule = true
 label_source = "name"
-occupied_color = "surface_variant"
+occupied_color = "surface_container"

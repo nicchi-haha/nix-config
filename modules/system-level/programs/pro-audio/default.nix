@@ -4,8 +4,6 @@
   imports = [
     ./kernel-settings.nix
     ./pam-unlimit.nix
-    ./common.nix
-    ./yabridge.nix
   ];
 
   options = {
@@ -15,7 +13,5 @@
   config = lib.mkIf config.pro-audio.enable {
     pro-audio.pam-unlimit.enable = lib.mkDefault true;
     pro-audio.kernel-settings.enable = lib.mkDefault true;
-    pro-audio.yabridge.enable = lib.mkDefault true;
-    pro-audio.common.enable = lib.mkDefault true;
   };
 }
