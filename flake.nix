@@ -1,61 +1,33 @@
 {
-  description = "dumb flake for my dumb setup";
+  description = "Sorry";
 
   inputs = {
-    # Unstable channel
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
 
-    # Stable channel
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    # Home Manager
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager,  ... }@inputs: {
-    nixosConfigurations = {
-      snowflake = let
-        username = "yuki";
-        system = "x86_64-linux";
+  outputs = inputs:
+  let
+    inherit (inputs.nixpkgs) lib;
+    inherit (lib.fileset) toList fileFilter;
 
-        pkgs-stable = import inputs.nixpkgs-stable {
-          inherit system;
-          config.allowUnfree = true;
-        };
+    isNixModule = file:
+    file.hasExt "nix"
+    && file.name != "flake.nix"
+    && !lib.hasPrefix "_" file.name;
 
-        specialArgs = {
-          inherit username;
-          inherit system;
-          inherit pkgs-stable;
-        };
-      in
-      nixpkgs.lib.nixosSystem {
-        inherit specialArgs;
+    importTree = path:
+    toList (fileFilter isNixModule path);
 
-        modules = [
-          ./unfree-list.nix
-          ./hosts/snowflake
-          ./users/${username}/nixos.nix
-          ./overlays
-
-          home-manager.nixosModules.default
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-
-              extraSpecialArgs = {
-                inherit inputs;
-              };
-
-              users.${username} = ./users/${username}/home.nix;
-            };
-          }
-        ];
-      };
-    };
+    mkFlake = inputs.flake-parts.lib.mkFlake {inherit inputs;};
+  in
+  mkFlake {
+    imports = importTree ./.;
   };
 }
