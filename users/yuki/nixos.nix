@@ -1,0 +1,29 @@
+{ self, inputs, ... }:
+
+{
+  flake.nixosModules.user-yuki = { pkgs, ... }: {
+    imports = [
+      self.nixosModules.zsh
+      self.nixosModules.hyprland
+      self.nixosModules.gdm
+      self.nixosModules.polkit-service
+      self.nixosModules.nautilus
+      self.nixosModules.kitty
+
+      # compatibility
+      self.nixosModules.appimage-compat
+
+      # Tweaks
+      self.nixosModules.pro-audio
+      self.nixosModules.gaming
+    ];
+
+    users.users.yuki = {
+      isNormalUser = true;
+      extraGroups = [ "audio" "wheel" "networkmanager" ];
+      shell = pkgs.zsh;
+    };
+
+    services.flatpak.enable = true;
+  };
+}

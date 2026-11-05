@@ -15,14 +15,14 @@
       # System
       self.nixosModules.nvidia
       self.nixosModules.msi-ec
+      self.nixosModules.kernel
+      self.nixosModules.laptop-services
 
       self.nixosModules.general
       self.nixosModules.user-yuki
     ];
 
     boot = {
-      kernelPackages = pkgs.linuxPackages_latest;
-
       loader = {
         limine = {
           enable = true;
