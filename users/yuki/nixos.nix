@@ -8,7 +8,7 @@
       self.nixosModules.gdm
       self.nixosModules.polkit-service
       self.nixosModules.nautilus
-      self.nixosModules.kitty
+      self.nixosModules.virt-manager
 
       # compatibility
       self.nixosModules.appimage-compat
@@ -25,5 +25,7 @@
     };
 
     services.flatpak.enable = true;
+    programs.ssh.startAgent = true;
+    programs.kdeconnect.enable = true;
   };
 }

@@ -17,6 +17,7 @@
       self.nixosModules.msi-ec
       self.nixosModules.kernel
       self.nixosModules.laptop-services
+      self.nixosModules.limine
 
       self.nixosModules.general
       self.nixosModules.user-yuki
