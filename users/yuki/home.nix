@@ -41,6 +41,7 @@
       self.homeModules.vim
       self.homeModules.latex
       self.homeModules.mpd
+      self.homeModules.sonora
     ];
 
     home.file.".config/noctalia".source = "${dotfiles}/config/noctalia";

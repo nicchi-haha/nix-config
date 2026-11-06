@@ -16,6 +16,9 @@
       # Tweaks
       self.nixosModules.pro-audio
       self.nixosModules.gaming
+
+      # Overlays
+      self.nixosModules.pins
     ];
 
     users.users.yuki = {
