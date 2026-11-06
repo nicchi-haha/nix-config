@@ -11,7 +11,7 @@
     ../../modules/user-level/hyprland-config
     ../../modules/user-level/programs
     ../../modules/user-level/shell
-    ../../modules/user-level/theme/adwaita
+    ../../modules/user-level/theme
     ];
 
   # Let Home Manager install and manage itself.

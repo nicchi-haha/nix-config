@@ -4,6 +4,7 @@
   imports = [
     ./ssh.nix
     ./virt-manager.nix
+    ./distrobox.nix
   ];
 
   options.dev.enable = lib.mkEnableOption "Some settings to make dev okay";
@@ -11,5 +12,6 @@
   config = lib.mkIf config.dev.enable {
     dev.ssh-agent.enable = lib.mkDefault true;
     dev.virt-manager.enable = lib.mkDefault false;
+    dev.distrobox.enable = lib.mkDefault false;
   };
 }

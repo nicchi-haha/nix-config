@@ -15,47 +15,48 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager,  ... }@inputs: {
-    nixosConfigurations = {
-      snowflake = let
-        username = "yuki";
-        system = "x86_64-linux";
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
 
-        pkgs-stable = import inputs.nixpkgs-stable {
-          inherit system;
-          config.allowUnfree = true;
-        };
+  let
+    username = "yuki";
+    system = "x86_64-linux";
+    host = "snowflake";
 
-        specialArgs = {
-          inherit username;
-          inherit system;
-          inherit pkgs-stable;
-        };
-      in
-      nixpkgs.lib.nixosSystem {
-        inherit specialArgs;
+    pkgs-stable = import inputs.nixpkgs-stable {
+      inherit system;
+      config.allowUnfree = true;
+    };
 
-        modules = [
-          ./unfree-list.nix
-          ./hosts/snowflake
-          ./users/${username}/nixos.nix
-          ./overlays
+    specialArgs = {
+      inherit username;
+      inherit system;
+      inherit pkgs-stable;
+    };
+  in
+  {
+    nixosConfigurations.${host} = nixpkgs.lib.nixosSystem {
+      inherit specialArgs;
 
-          home-manager.nixosModules.default
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
+      modules = [
+        ./unfree-list.nix
+        ./hosts/snowflake
+        ./users/${username}/nixos.nix
+        ./overlays
 
-              extraSpecialArgs = {
-                inherit inputs;
-              };
+        home-manager.nixosModules.default
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
 
-              users.${username} = ./users/${username}/home.nix;
+            extraSpecialArgs = {
+              inherit inputs;
             };
-          }
-        ];
-      };
+
+            users.${username} = ./users/${username}/home.nix;
+          };
+        }
+      ];
     };
   };
 }

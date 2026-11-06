@@ -7,6 +7,9 @@
     ./system-configs
   ];
 
+  # Enable SysRq
+  boot.kernel.sysctl."kernel.sysrq" = 1;
+
   # Define a user account.
   users.users.${username} = {
     isNormalUser = true;

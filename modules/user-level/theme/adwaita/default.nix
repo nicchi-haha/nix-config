@@ -1,5 +1,5 @@
-# It feels like adwaita but it uses breeze icons and I like it. can't figure out how to set kde theme yet
-{ pkgs, ... }:
+# libadwaita. can't figure out how to set kde theme yet
+{ pkgs, lib, ... }:
 
 {
   # Set GTK theme
@@ -18,8 +18,8 @@
     };
 
     iconTheme = {
-      name = "breeze-dark";
-      package = pkgs.kdePackages.breeze-icons;
+      name = lib.mkDefault "Adwaita";
+      package = lib.mkDefault pkgs.adwaita-icon-theme;
     };
   };
 
