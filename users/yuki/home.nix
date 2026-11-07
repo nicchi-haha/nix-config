@@ -24,13 +24,14 @@
     home.stateVersion = "26.05";
 
     imports = [
+      # Desktop
       self.homeModules.hyprland
       self.homeModules.theme
       self.homeModules.polkit-agent
       self.homeModules.common
+
       self.homeModules.dev-common
       self.homeModules.multimedia
-      self.homeModules.kitty
       self.homeModules.noctalia
       self.homeModules.zsh
       self.homeModules.starship

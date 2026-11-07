@@ -10,6 +10,7 @@
       loupe
       obsidian
       baobab
+      kitty
     ];
 
     programs.thunderbird.enable = true;
