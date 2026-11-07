@@ -1,9 +1,9 @@
-{ inputs, ... }: 
+{ moduleWithSystem, inputs, ... }: 
 {
-  flake.nixosModules.pins = { pkgs, ... }:
+  flake.nixosModules.pins = moduleWithSystem ({ system, ... }:
   let
     pkgs-stable = import inputs.nixpkgs-stable {
-      system = "x86_64-linux";
+      inherit system;
       config.allowUnfree = true;
     };
   in
@@ -14,5 +14,5 @@
         yabridge = pkgs-stable.yabridge;
       })
     ];
-  };
+  });
 }

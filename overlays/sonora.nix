@@ -1,14 +1,9 @@
-{ inputs, ... }:
+{ moduleWithSystem, ... }:
 
 {
-  flake.homeModules.sonora =
-    let
-      system = "x86_64-linux";
-    in
-    {
-      home.packages = [
-        inputs.sonora.packages.${system}.default
-      ];
-    };
-  }
+  flake.homeModules.sonora = moduleWithSystem ({ inputs', ... }:
+  {
+    home.packages = [ inputs'.sonora.packages.default ];
+  });
+}
 
