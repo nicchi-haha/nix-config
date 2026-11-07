@@ -39,7 +39,6 @@
       self.homeModules.pro-audio-common
       self.homeModules.yabridge
 
-      self.homeModules.vim
       self.homeModules.latex
       self.homeModules.mpd
       self.homeModules.sonora

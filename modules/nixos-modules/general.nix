@@ -1,7 +1,7 @@
 { self, ... }:
 
 {
-  flake.nixosModules.general = { pkgs, ... }:
+  flake.nixosModules.general = { pkgs, lib, ... }:
   {
     imports = [
       self.nixosModules.nix
@@ -27,8 +27,6 @@
       jack.enable = true;
     };
 
-    environment.systemPackages = with pkgs; [
-      vim
-    ];
+    programs.vim.enable = lib.mkDefault true;
   };
 }

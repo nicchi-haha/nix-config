@@ -10,11 +10,11 @@
       loupe
       obsidian
       baobab
-      kitty
     ];
 
     programs.thunderbird.enable = true;
     programs.firefox.enable = true;
+    programs.kitty.enable = true;
 
     programs.keepassxc = {
       enable = true;
