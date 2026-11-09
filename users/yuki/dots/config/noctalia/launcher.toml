@@ -1,0 +1,4 @@
+[shell.launcher]
+categories = false
+compact = true
+layout = "simple"

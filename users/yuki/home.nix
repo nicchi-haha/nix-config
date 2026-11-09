@@ -26,13 +26,14 @@
     imports = [
       # Desktop
       self.homeModules.hyprland
+      self.homeModules.noctalia
       self.homeModules.theme
       self.homeModules.polkit-agent
+
       self.homeModules.common
+      self.homeModules.multimedia
 
       self.homeModules.dev-common
-      self.homeModules.multimedia
-      self.homeModules.noctalia
       self.homeModules.zsh
       self.homeModules.starship
       self.homeModules.study
@@ -42,6 +43,7 @@
       self.homeModules.latex
       self.homeModules.mpd
       self.homeModules.sonora
+      self.homeModules.fcitx5
     ];
 
     home.file.".config/noctalia".source = "${dotfiles}/config/noctalia";
