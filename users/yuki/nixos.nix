@@ -10,6 +10,7 @@
       self.nixosModules.polkit-service
       self.nixosModules.nautilus
       self.nixosModules.virt-manager
+      self.nixosModules.dnscrypt
 
       # compatibility
       self.nixosModules.appimage-compat
