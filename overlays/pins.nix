@@ -12,6 +12,7 @@
       (self: super: {
         reaper = pkgs-stable.reaper;
         yabridge = pkgs-stable.yabridge;
+        anki = pkgs-stable.anki;
       })
     ];
   });

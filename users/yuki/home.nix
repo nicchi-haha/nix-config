@@ -49,5 +49,6 @@
     home.file.".config/noctalia".source = "${dotfiles}/config/noctalia";
     home.file.".config/hypr".source = "${dotfiles}/config/hypr";
     home.file.".config/kdeglobals".source = "${dotfiles}/config/kdeglobals";
+    home.file.".config/autostart/nm-applet.desktop".source = "${dotfiles}/config/autostart/nm-applet.desktop";
   };
 }

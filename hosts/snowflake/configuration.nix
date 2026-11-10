@@ -18,8 +18,10 @@
       self.nixosModules.kernel
       self.nixosModules.laptop-services
       self.nixosModules.limine
+      self.nixosModules.cache
 
       self.nixosModules.general
+      self.nixosModules.nm-extra
       self.nixosModules.user-yuki
     ];
 
