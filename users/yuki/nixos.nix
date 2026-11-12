@@ -6,7 +6,7 @@
       self.nixosModules.zsh
       self.nixosModules.vim
       self.nixosModules.hyprland
-      self.nixosModules.gdm
+      self.nixosModules.ly
       self.nixosModules.polkit-service
       self.nixosModules.nautilus
       self.nixosModules.virt-manager

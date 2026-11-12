@@ -41,7 +41,7 @@
       self.homeModules.yabridge
 
       self.homeModules.latex
-      self.homeModules.mpd
+      self.homeModules.office
       self.homeModules.sonora
       self.homeModules.fcitx5
     ];
