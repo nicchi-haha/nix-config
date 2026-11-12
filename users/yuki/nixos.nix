@@ -4,7 +4,6 @@
   flake.nixosModules.user-yuki = { pkgs, ... }: {
     imports = [
       self.nixosModules.zsh
-      self.nixosModules.vim
       self.nixosModules.hyprland
       self.nixosModules.ly
       self.nixosModules.polkit-service

@@ -1,6 +1,5 @@
 {
-  flake.nixosModules.nvidia = { config, lib, ... }:
-  {
+  flake.nixosModules.nvidia = { config, lib, ... }: {
     hardware.graphics.enable = true;
     hardware.nvidia = {
       open = true;

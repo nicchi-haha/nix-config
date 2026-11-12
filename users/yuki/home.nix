@@ -29,6 +29,8 @@
       self.homeModules.noctalia
       self.homeModules.theme
       self.homeModules.polkit-agent
+      self.homeModules.kitty
+      self.homeModules.vim
 
       self.homeModules.common
       self.homeModules.multimedia

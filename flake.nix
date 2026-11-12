@@ -4,11 +4,6 @@
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
 
-    wrappers = {
-      url = "github:nix-community/nix-wrapper-modules";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
