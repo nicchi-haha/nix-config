@@ -1,6 +1,5 @@
 {
-  flake.nixosModules.appimage-compat = { pkgs, ... }:
-  {
+  flake.nixosModules.appimage-compat = { pkgs, ... }: {
     programs.appimage = {
       enable = true;
       binfmt = true;

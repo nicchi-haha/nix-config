@@ -1,9 +1,6 @@
 {
-  flake.homeModules.fcitx5 = 
-  # Enables fcitx5 and install mozc, configure manually
-  { pkgs, ... }:
-
-  {
+  flake.homeModules.fcitx5 = { pkgs, ... }: {
+    # Enable fcitx5 as an IME and install mozc addon
     i18n.inputMethod = {
       enable = true;
       type = "fcitx5";

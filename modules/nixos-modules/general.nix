@@ -1,8 +1,5 @@
-{ self, ... }:
-
-{
-  flake.nixosModules.general = { pkgs, lib, ... }:
-  {
+{ self, ... }: {
+  flake.nixosModules.general = { lib, ... }: {
     imports = [
       self.nixosModules.nix
       self.nixosModules.fonts

@@ -1,7 +1,5 @@
 {
-  flake.homeModules.office = { pkgs, ... }:
-
-  {
+  flake.homeModules.office = { pkgs, ... }: {
     home.packages = with pkgs; [
       libreoffice-stable
     ];

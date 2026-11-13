@@ -1,6 +1,5 @@
 {
-  flake.homeModules.noctalia = { pkgs, ... }:
-  {
+  flake.homeModules.noctalia = { pkgs, ... }: {
     home.packages = with pkgs; [
       noctalia
       brightnessctl

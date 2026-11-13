@@ -1,6 +1,5 @@
 {
-  flake.homeModules.yabridge = { pkgs, ... }:
-  {
+  flake.homeModules.yabridge = { pkgs, ... }: {
     home.packages = with pkgs; [
       yabridge
       yabridgectl

@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.nm-extra = { pkgs, lib, ... }: {
+  flake.nixosModules.nm-extra = { pkgs, ... }: {
     environment.systemPackages = with pkgs; [
       networkmanagerapplet
     ];

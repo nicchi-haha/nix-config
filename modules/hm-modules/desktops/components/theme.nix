@@ -1,6 +1,5 @@
 {
-  flake.homeModules.theme = { pkgs, ... }:
-  {
+  flake.homeModules.theme = { pkgs, ... }: {
     # Set GTK theme
     gtk = {
       enable = true;

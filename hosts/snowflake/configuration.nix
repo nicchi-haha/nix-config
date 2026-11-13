@@ -9,8 +9,7 @@
     ];
   };
 
-  flake.nixosModules.host-snowflake = {pkgs, ...}: 
-  {
+  flake.nixosModules.host-snowflake = {
     imports = [
       # System
       self.nixosModules.nvidia

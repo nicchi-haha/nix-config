@@ -1,6 +1,5 @@
 {
-  flake.homeModules.common = { pkgs, ... }:
-  {
+  flake.homeModules.common = { pkgs, ... }: {
     home.packages = with pkgs; [
       nautilus
       file-roller

@@ -1,7 +1,5 @@
 {
-  flake.nixosModules.zsh = {pkgs, lib, ...}:
-
-  {
+  flake.nixosModules.zsh = { lib, ... }: {
     programs.zsh = {
       enable = true;
       syntaxHighlighting.enable = lib.mkDefault true;
@@ -9,4 +7,3 @@
     };
   };
 }
-

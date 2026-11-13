@@ -1,6 +1,5 @@
 {
-  flake.nixosModules.gaming = { pkgs, ... }:
-  {
+  flake.nixosModules.gaming = { pkgs, ... }: {
     environment.systemPackages = with pkgs; [
       mangohud
     ];

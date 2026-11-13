@@ -1,5 +1,5 @@
 {
-  flake.homeModules.kitty = { pkgs, ... }: {
+  flake.homeModules.kitty = {
     programs.kitty = {
       enable = true;
       themeFile = "adwaita_dark";

@@ -1,6 +1,5 @@
 {
-  flake.homeModules.pro-audio-common = { pkgs, ... }:
-  {
+  flake.homeModules.pro-audio-common = { pkgs, ... }: {
     home.packages = with pkgs; [
       qjackctl # JACK utility
       reaper # DAW

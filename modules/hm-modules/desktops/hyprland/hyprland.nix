@@ -1,6 +1,5 @@
 {
-  flake.homeModules.hyprland =
-  {
+  flake.homeModules.hyprland = {
     programs.hyprshot.enable = true;
   };
 }

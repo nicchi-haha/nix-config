@@ -1,6 +1,5 @@
 {
-  flake.homeModules.study = { pkgs, ... }:
-  {
+  flake.homeModules.study = { pkgs, ... }: {
     home.packages = with pkgs; [
       anki
     ];

@@ -1,6 +1,5 @@
 {
-  flake.nixosModules.virt-manager = { pkgs, ... }:
-  {
+  flake.nixosModules.virt-manager = { pkgs, ... }: {
     virtualisation.libvirtd = {
       enable = true;
       qemu.vhostUserPackages = with pkgs; [
